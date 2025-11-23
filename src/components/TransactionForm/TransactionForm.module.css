@@ -1,47 +1,63 @@
 .form {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: var(--gray-800);
+  border: 2px solid var(--gray-700);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  border-radius: 0;
 }
 
 .form h3 {
-  margin-bottom: 20px;
-  color: #2c3e50;
+  margin-bottom: 24px;
+  color: var(--white);
   text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 12px;
 }
 
 .radioGroup {
   display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
-  justify-content: center;
+  gap: 0;
+  margin-bottom: 24px;
+  background: var(--gray-900);
+  border: 2px solid var(--gray-700);
 }
 
 .radioGroup label {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
-  border: 2px solid #e9ecef;
-  border-radius: 8px;
+  padding: 16px 20px;
+  border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  flex: 1;
+  justify-content: center;
+  color: var(--gray-400);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-right: 2px solid var(--gray-700);
+}
+
+.radioGroup label:last-child {
+  border-right: none;
 }
 
 .radioGroup label.active {
-  border-color: #3498db;
-  background-color: #f8f9fa;
+  background: var(--primary);
+  color: var(--white);
 }
 
 .radioGroup label.income.active {
-  border-color: #27ae60;
-  background-color: #f0f9f0;
+  background: var(--success);
 }
 
 .radioGroup label.expense.active {
-  border-color: #e74c3c;
-  background-color: #fef0f0;
+  background: var(--primary);
 }
 
 .radioGroup input[type="radio"] {
@@ -50,58 +66,73 @@
 
 .inputGroup {
   display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 .inputGroup input,
 .inputGroup select {
   flex: 1;
-  padding: 12px;
-  border: 2px solid #e9ecef;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 0.3s ease;
+  padding: 14px 16px;
+  border: 2px solid var(--gray-700);
+  border-radius: 0;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  background: var(--gray-900);
+  color: var(--white);
+  font-weight: 500;
+}
+
+.inputGroup input::placeholder {
+  color: var(--gray-500);
 }
 
 .inputGroup input:focus,
 .inputGroup select:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: var(--primary);
+  background: var(--gray-800);
 }
 
 .description,
 .date {
   width: 100%;
-  padding: 12px;
-  border: 2px solid #e9ecef;
-  border-radius: 8px;
-  font-size: 16px;
-  margin-bottom: 15px;
-  transition: border-color 0.3s ease;
+  padding: 14px 16px;
+  border: 2px solid var(--gray-700);
+  border-radius: 0;
+  font-size: 14px;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+  background: var(--gray-900);
+  color: var(--white);
+  font-weight: 500;
 }
 
 .description:focus,
 .date:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: var(--primary);
+  background: var(--gray-800);
 }
 
 .submitButton {
   width: 100%;
-  padding: 12px;
-  background: linear-gradient(135deg, #3498db, #2980b9);
-  color: white;
-  border: none;
-  border-radius: 8px;
+  padding: 16px;
+  background: var(--primary);
+  color: var(--white);
+  border: 2px solid var(--primary);
+  border-radius: 0;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .submitButton:hover {
-  background: linear-gradient(135deg, #2980b9, #3498db);
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+  box-shadow: var(--shadow-md);
 }

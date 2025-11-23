@@ -4,11 +4,42 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Черно-красная палитра */
+  --black: #000000;
+  --gray-900: #0a0a0a;
+  --gray-800: #1a1a1a;
+  --gray-700: #2a2a2a;
+  --gray-600: #404040;
+  --gray-500: #666666;
+  --gray-400: #999999;
+  --gray-300: #cccccc;
+  --gray-200: #e5e5e5;
+  --gray-100: #f5f5f5;
+  --white: #ffffff;
+  
+  /* Акцентные цвета */
+  --primary: #dc2626;
+  --primary-dark: #991b1b;
+  --primary-light: #fecaca;
+  --success: #16a34a;
+  --error: #dc2626;
+  --warning: #d97706;
+  
+  /* Тени */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.9);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.9);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.9);
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f6fa;
-  color: #2c3e50;
-  line-height: 1.6;
+  font-family: 'Inter', 'Arial', sans-serif;
+  background: linear-gradient(135deg, var(--gray-900) 0%, var(--black) 100%);
+  color: var(--white);
+  line-height: 1.5;
+  min-height: 100vh;
+  font-weight: 500;
 }
 
 .app {
@@ -21,17 +52,25 @@ body {
 .app-header {
   text-align: center;
   margin-bottom: 40px;
+  padding: 40px 0;
+  border-bottom: 2px solid var(--primary);
 }
 
 .app-header h1 {
-  color: #2c3e50;
   font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--white);
   margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .app-header p {
-  color: #7f8c8d;
   font-size: 1.1rem;
+  color: var(--gray-400);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .app-grid {
@@ -43,14 +82,42 @@ body {
 @media (min-width: 768px) {
   .app-grid {
     grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "balance balance"
+      "form charts"
+      "list list";
+  }
+  
+  .balance-section {
+    grid-area: balance;
+  }
+  
+  .form-section {
+    grid-area: form;
+  }
+  
+  .charts-section {
+    grid-area: charts;
+  }
+  
+  .list-section {
+    grid-area: list;
   }
 }
 
-.stats-placeholder {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  color: #7f8c8d;
+@media (min-width: 1024px) {
+  .app-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+      "balance balance balance"
+      "form charts charts"
+      "list list list";
+  }
+}
+
+/* Базовые стили для угловатых карточек */
+.card {
+  background: var(--gray-800);
+  border: 2px solid var(--gray-700);
+  box-shadow: var(--shadow);
 }
