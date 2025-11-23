@@ -12,7 +12,6 @@ import {
 import { Bar, Doughnut } from 'react-chartjs-2';
 import styles from './ExpenseChart.module.css';
 
-// Регистрируем компоненты Chart.js
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -24,7 +23,6 @@ ChartJS.register(
 );
 
 const ExpenseChart = ({ transactions }) => {
-  // Подготовка данных для графиков
   const prepareChartData = () => {
     const incomeByCategory = {};
     const expenseByCategory = {};
@@ -33,15 +31,13 @@ const ExpenseChart = ({ transactions }) => {
     transactions.forEach(transaction => {
       const { type, category, amount, date } = transaction;
       
-      // Группировка по категориям
       if (type === 'income') {
         incomeByCategory[category] = (incomeByCategory[category] || 0) + amount;
       } else {
         expenseByCategory[category] = (expenseByCategory[category] || 0) + amount;
       }
 
-      // Группировка по месяцам
-      const monthYear = date.substring(0, 7); // YYYY-MM
+      const monthYear = date.substring(0, 7);
       if (!monthlyData[monthYear]) {
         monthlyData[monthYear] = { income: 0, expense: 0 };
       }
@@ -57,7 +53,6 @@ const ExpenseChart = ({ transactions }) => {
 
   const { incomeByCategory, expenseByCategory, monthlyData } = prepareChartData();
 
-  // Данные для круговой диаграммы расходов
   const expenseChartData = {
     labels: Object.keys(expenseByCategory),
     datasets: [
@@ -72,8 +67,7 @@ const ExpenseChart = ({ transactions }) => {
       }
     ]
   };
-
-  // Данные для столбчатой диаграммы по месяцам
+  
   const monthlyChartData = {
     labels: Object.keys(monthlyData).map(month => {
       const [year, monthNum] = month.split('-');

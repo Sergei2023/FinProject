@@ -5,7 +5,6 @@
 }
 
 :root {
-  /* Черно-красная палитра */
   --black: #000000;
   --gray-900: #0a0a0a;
   --gray-800: #1a1a1a;
@@ -18,7 +17,6 @@
   --gray-100: #f5f5f5;
   --white: #ffffff;
   
-  /* Акцентные цвета */
   --primary: #dc2626;
   --primary-dark: #991b1b;
   --primary-light: #fecaca;
@@ -26,7 +24,6 @@
   --error: #dc2626;
   --warning: #d97706;
   
-  /* Тени */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.9);
   --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.9);
@@ -115,7 +112,6 @@ body {
   }
 }
 
-/* Базовые стили для угловатых карточек */
 .card {
   background: var(--gray-800);
   border: 2px solid var(--gray-700);

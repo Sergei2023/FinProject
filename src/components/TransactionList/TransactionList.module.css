@@ -210,7 +210,6 @@
   font-weight: 600;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
   .transactionMain {
     flex-direction: column;

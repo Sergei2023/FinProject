@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Balance.module.css';
 
 const Balance = ({ transactions }) => {
-  // Рассчитываем общий баланс, доходы и расходы
   const calculations = transactions.reduce((acc, transaction) => {
     if (transaction.type === 'income') {
       acc.income += transaction.amount;

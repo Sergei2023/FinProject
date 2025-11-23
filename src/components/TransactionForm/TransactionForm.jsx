@@ -33,7 +33,6 @@ const TransactionForm = ({ onAddTransaction }) => {
 
     onAddTransaction(transaction);
     
-    // Сброс формы
     setFormData({
       amount: '',
       category: '',
@@ -48,7 +47,7 @@ const TransactionForm = ({ onAddTransaction }) => {
     setFormData(prev => ({
       ...prev,
       [name]: value,
-      ...(name === 'type' && { category: '' }) // Сбрасываем категорию при смене типа
+      ...(name === 'type' && { category: '' })
     }));
   };
 
