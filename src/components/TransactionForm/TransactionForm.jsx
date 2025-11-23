@@ -1,4 +1,3 @@
-// src/components/TransactionForm/TransactionForm.jsx
 import React, { useState } from 'react';
 import styles from './TransactionForm.module.css';
 
